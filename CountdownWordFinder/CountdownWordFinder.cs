@@ -3,13 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using CountdownWordFinder.Properties;
 
 namespace CountdownWordFinder
 {
     class CountdownWordFinder
     {
-        static readonly string unserialisedDictionary = File.ReadAllText("dictionary.json");
-        static Dictionary<string, HashSet<string>> dictionary = JsonConvert.DeserializeObject<Dictionary<string, HashSet<string>>>(unserialisedDictionary);
+        static Dictionary<string, HashSet<string>> dictionary = JsonConvert.DeserializeObject<Dictionary<string, HashSet<string>>>(Resource.dictionary);
 
         static void DictionaryLoader()
         {
@@ -19,7 +19,7 @@ namespace CountdownWordFinder
             string line = "";
             Dictionary<string, HashSet<string>> words = new Dictionary<string, HashSet<string>>();
             int counter = 0;
-            StreamReader sr = new StreamReader("dictionary.txt");
+            StreamReader sr = new StreamReader(Resource.dictionaryText);
 
             // Reads through entire dictionary file, line by line and finds words that are between 5 and 9 characters long
             while ((line = sr.ReadLine()) != null)
@@ -50,7 +50,7 @@ namespace CountdownWordFinder
             sr.Close();
 
             // Creates the json file which can be used by the dictionary every time the program is run, saving on computation time.
-            using (StreamWriter file = File.CreateText("dictionary.json"))
+            using (StreamWriter file = File.CreateText(Resource.dictionary))
             {
                 JsonSerializer serializer = new JsonSerializer();
                 serializer.Serialize(file, words);
