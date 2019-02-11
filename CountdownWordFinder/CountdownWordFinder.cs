@@ -121,7 +121,7 @@ namespace CountdownWordFinder
             Console.WriteLine("Enter 9, space-seperated characters: ");
             string l = Console.ReadLine();
 
-            List<string> letters = l.Split().ToList();
+            List<string> letters = l.ToLower().Split().ToList();
 
             CombinationStarter(letters);
             Console.WriteLine("Finished!");
