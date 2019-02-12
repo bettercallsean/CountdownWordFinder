@@ -11,7 +11,7 @@ It's a simple console application that only requires the 9 letters that appear d
 
 ![input](images/input.png)
 
-The output from which will be a bit of a mess (I'll clean this up eventually), but will contain the 5-9 letter words for the given input.
+The output from which will be a bit of a mess, but will contain the 5-9 letter words for the given input.
 
 ![output1](images/output1.png)
 ![output2](images/output2.png)
