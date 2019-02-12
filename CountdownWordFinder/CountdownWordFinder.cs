@@ -81,12 +81,12 @@ namespace CountdownWordFinder
 
         private static void DisplaySet(HashSet<string> set)
         {
-            Console.Write("{");
+            //Console.Write("{");
             foreach (string i in set)
             {
                 Console.Write(" {0}", i);
             }
-            Console.WriteLine(" }");
+            Console.WriteLine();
         }
 
         static void WordFinder(string word)
