@@ -89,11 +89,11 @@ namespace CountdownWordFinder
             Console.WriteLine();
         }
 
-        static void WordFinder(string word)
+        static void WordFinder(string orderedLetters)
         {
             // Checks to see if the letter combination is a dictionary value and displays the hash set associated with it, if so.
-            if (dictionary.ContainsKey(word))
-                DisplaySet(dictionary[word]);
+            if (dictionary.ContainsKey(orderedLetters))
+                DisplaySet(dictionary[orderedLetters]);
         }
 
         static void GetCombinations(List<string> letters)
