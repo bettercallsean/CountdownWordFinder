@@ -9,11 +9,11 @@ This program does all the hard work for you, so whilst everyone else is racking 
 ## How to use
 It's a simple console application that only requires the 9 letters that appear during the letters round, separated by a space (caps shouldn't matter).
 
-![input](https://imgur.com/OfoCH4h.png)
+![input](images/input.png)
 
 The output from which will be a bit of a mess (I'll clean this up eventually), but will contain the 5-9 letter words for the given input.
 
-![output1](https://imgur.com/31qTROd.png)
-![output2](https://imgur.com/XdBut2a.png)
+![output1](images/output1.png)
+![output2](images/output2.png)
 
 ###### This example was taken from Lee Mack's amazing 9 letter on the 8 out of 10 Cat's version which can be watched here: https://youtu.be/Taf-8b5JeTE?t=413
