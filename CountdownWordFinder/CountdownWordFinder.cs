@@ -36,11 +36,11 @@ namespace CountdownWordFinder
                     line = string.Concat(line.OrderBy(c => c));
                     if (!words.ContainsKey(line))
                     {
-                        HashSet<string> wordTest = new HashSet<string>
+                        HashSet<string> wordSet = new HashSet<string>
                         {
                             word
                         };
-                        words.Add(line, wordTest);
+                        words.Add(line, wordSet);
                     }
                     else
                         words[line].Add(word);
@@ -58,7 +58,7 @@ namespace CountdownWordFinder
             Console.WriteLine("Done!");
         }
 
-        static IEnumerable<IEnumerable<T>> GetCombinations<T>(IEnumerable<T> items, int count)
+        static IEnumerable<IEnumerable<T>> CombinationFinder<T>(IEnumerable<T> items, int count)
         {
             // Returns a list of all possible combinations of the items passed through.
             // The combinations will be 'count' long i.e if 2 is passed through, all 
@@ -71,7 +71,7 @@ namespace CountdownWordFinder
                     yield return new T[] { item };
                 else
                 {
-                    foreach (var result in GetCombinations(items.Skip(i + 1), count - 1))
+                    foreach (var result in CombinationFinder(items.Skip(i + 1), count - 1))
                         yield return new T[] { item }.Concat(result);
                 }
 
@@ -96,13 +96,13 @@ namespace CountdownWordFinder
                 DisplaySet(dictionary[word]);
         }
 
-        static void CombinationStarter(List<string> letters)
+        static void GetCombinations(List<string> letters)
         {
             // We're only interested in the 5-9 letter characters because anything else isn't really worth the time.
             for (int i = 5; i <= 9; i++)
             {
                 Console.WriteLine("{0} Letter Words: ", i);
-                var result = GetCombinations(letters, i);
+                var result = CombinationFinder(letters, i);
                 foreach (var combination in result)
                 {
                     string ordered = string.Join("", combination.ToArray());
@@ -123,7 +123,7 @@ namespace CountdownWordFinder
 
             List<string> letters = l.ToLower().Split().ToList();
 
-            CombinationStarter(letters);
+            GetCombinations(letters);
             Console.WriteLine("Finished!");
             
             Console.ReadKey();
