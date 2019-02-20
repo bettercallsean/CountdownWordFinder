@@ -115,7 +115,7 @@ namespace CountdownWordFinder
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter 9 characters");
+            Console.WriteLine("Enter 9 characters:");
             string l = Console.ReadLine();
 
             if (l.Length < 9)
@@ -123,6 +123,7 @@ namespace CountdownWordFinder
             else
             {
                 List<char> letters = new List<char>();
+                l = l.ToLower();
                 letters.AddRange(l);
 
                 GetCombinations(letters);
