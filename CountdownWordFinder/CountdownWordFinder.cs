@@ -78,10 +78,9 @@ namespace CountdownWordFinder
 
         private static void DisplaySet(HashSet<string> set)
         {
-            //Console.Write("{");
             foreach (string i in set)
             {
-                Console.Write("{0}", i);
+                Console.Write("{0} ", i);
             }
             Console.WriteLine();
         }
