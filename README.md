@@ -7,7 +7,7 @@ If you're like me, you've probably watched an episode of Countdown, seen the con
 This program does all the hard work for you, so whilst everyone else is racking their brains around the problem before them, you can sit back and gloat.
 
 ## How to use
-It's a simple console application that only requires the 9 letters that appear during the letters round, separated by a space (caps shouldn't matter).
+It's a simple console application that only requires the 9 letters that appear during the letters round (caps shouldn't matter).
 
 ![input](images/input.png)
 
